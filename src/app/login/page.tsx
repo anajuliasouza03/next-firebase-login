@@ -18,7 +18,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
-export function LoginPage() {
+export default function LoginPage() {
   const router = useRouter();
 
   const form = useForm<LoginInput>({
@@ -30,7 +30,7 @@ export function LoginPage() {
     console.log("Submeteu com", data);
     try {
       await login(data.email, data.password);
-      console.log("Login bem-sucedido, redirecionando…");
+      console.log("Login bem-sucedido, indo pro dashboard");
       router.push("/dashboard");
     } catch (e: any) {
       console.error(e);

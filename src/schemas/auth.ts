@@ -1,5 +1,4 @@
-import { register } from "module";
-import { email, z } from "zod";
+import { z } from "zod";
 
 //login
 export const loginSchema = z.object({
@@ -20,10 +19,10 @@ export const registerSchema = z
     name: z.string().min(2, { message: "Informe seu nome" }),
     email: z.string().email({ message: "Email inválido!" }),
     password: z.string().min(6, { message: "Mínimo de 6 caracteres" }),
-    confirmPassword: z.string().min(6, { message: "Confirmacao necessária" }),
+    confirmPassword: z.string().min(6, { message: "Confirmação necessária" }),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "As senhas não batem",
     path: ["confirmPassword"],
   });
-export type RegisterInput = z.infer<typeof register>;
+export type RegisterInput = z.infer<typeof registerSchema>;

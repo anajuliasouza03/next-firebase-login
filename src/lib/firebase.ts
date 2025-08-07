@@ -7,7 +7,6 @@ import {
   updateProfile,
   UserCredential,
 } from "firebase/auth";
-import { email } from "zod";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY!,
@@ -28,7 +27,7 @@ export const login = (email: string, password: string) =>
 export const resetPassword = (email: string) =>
   sendPasswordResetEmail(auth, email);
 
-export const register = async (
+export const registerUser = async (
   email: string,
   password: string,
   name: string
