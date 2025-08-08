@@ -35,8 +35,7 @@ export default function LoginPage() {
     } catch (e: any) {
       console.error(e);
       if (e.message == "Firebase: Error (auth/invalid-credential).") {
-        alert("Parece que você não fez cadastro ainda!");
-        router.push("/register");
+        alert("Credenciais Inválidas! Tente novamente ou Registre-se");
       }
     }
   };
