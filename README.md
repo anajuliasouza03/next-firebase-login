@@ -3,8 +3,11 @@ Template enxuto em Next.js (App Router) com Firebase Auth (e-mail/senha), formul
 
 Features
 🔐 Auth Firebase + sign-out
+
 ✅ Validação Zod integrada ao RHF
+
 🧱 UI com shadcn-ui (Form, Input, Card, Button)
+
 🛡️ Guard no dashboard (redirect se não logado)
 
 -----------------------------------------------------
