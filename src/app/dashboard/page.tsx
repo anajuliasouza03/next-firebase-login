@@ -12,7 +12,7 @@ export default function Page() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const unsuscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
         router.replace("/login");
         return;
@@ -20,6 +20,7 @@ export default function Page() {
       setName(user.displayName ?? user.email ?? "Usuário");
       setReady(true);
     });
+    return unsubscribe;
   }, [router]);
 
   if (!ready) {
