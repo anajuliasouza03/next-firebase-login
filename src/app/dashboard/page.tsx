@@ -1,6 +1,7 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -35,6 +36,15 @@ export default function Page() {
         Olá, <a className="font-bold text-red-500">{name}</a>!
       </div>
       <div>Bem-vindo ao seu Dashboard</div>
+      <Button
+        onClick={async () => {
+          await signOut(auth);
+        }}
+        variant={"outline"}
+        className="m-3"
+      >
+        Sair
+      </Button>
     </div>
   );
 }
