@@ -2,6 +2,7 @@
 Template enxuto em Next.js (App Router) com Firebase Auth (e-mail/senha), formulários via React Hook Form + Zod e UI shadcn-ui. Inclui login, register, reset-password e dashboard protegido — pronto pra Vercel.
 
 Features
+
 🔐 Auth Firebase + sign-out
 
 ✅ Validação Zod integrada ao RHF
