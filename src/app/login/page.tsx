@@ -31,11 +31,11 @@ export default function LoginPage() {
     try {
       await login(data.email, data.password);
       console.log("Login bem-sucedido, indo pro dashboard");
-      router.push("/dashboard");
+      router.replace("/dashboard");
     } catch (e: any) {
       console.error(e);
       if (e.message == "Firebase: Error (auth/invalid-credential).") {
-        alert("Você não fez cadastro ainda!");
+        alert("Parece que você não fez cadastro ainda!");
         router.push("/register");
       }
     }
@@ -88,11 +88,17 @@ export default function LoginPage() {
                 )}
               />
               <div className="flex justify-between">
-                <Link href="/reset-password" className="text-[12px]">
+                <Link
+                  href="/reset-password"
+                  className="text-[12px] hover:underline"
+                >
                   Esqueci minha senha
                 </Link>
                 <Link href="/register" className="text-[12px]">
-                  Sem login? Registre-se
+                  <div className="flex gap-1">
+                    Sem login?
+                    <p className="text-gray-500 hover:underline">Registre-se</p>
+                  </div>
                 </Link>
               </div>
               <Button type="submit">Entrar</Button>

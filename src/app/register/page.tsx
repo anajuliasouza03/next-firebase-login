@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 import { registerUser } from "@/lib/firebase";
 import { RegisterInput, registerSchema } from "@/schemas/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { User } from "lucide-react";
+import { User, UserPlus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
@@ -34,7 +34,7 @@ export default function Page() {
     try {
       await registerUser(data.email, data.password, data.name);
       alert("Conta criada! Faça login");
-      router.push("/login");
+      router.replace("/login");
     } catch (e: any) {
       console.error(e);
     }
@@ -51,7 +51,7 @@ export default function Page() {
             <CardHeader>
               <CardTitle>
                 <div className="flex items-center gap-3">
-                  <User size={16} /> Faça seu Cadastro aqui!
+                  <UserPlus size={16} /> Faça seu Cadastro aqui!
                 </div>
               </CardTitle>
             </CardHeader>
