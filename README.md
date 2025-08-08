@@ -1,3 +1,14 @@
+Next + Firebase Auth + RHF/Zod + shadcn-ui
+Template enxuto em Next.js (App Router) com Firebase Auth (e-mail/senha), formulários via React Hook Form + Zod e UI shadcn-ui. Inclui login, register, reset-password e dashboard protegido — pronto pra Vercel.
+
+Features
+🔐 Auth Firebase + sign-out
+✅ Validação Zod integrada ao RHF
+🧱 UI com shadcn-ui (Form, Input, Card, Button)
+🛡️ Guard no dashboard (redirect se não logado)
+
+-----------------------------------------------------
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
